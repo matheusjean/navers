@@ -1,16 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 import { Container, Content } from './styles';
 import logo from '../../assets/logo.svg';
+import { signOut } from '../../store/auth/actions';
 
 export default function Header() {
+  const dispatch = useDispatch();
+
+  function handleSignOut() {
+    dispatch(signOut());
+  }
+
   return (
     <Container>
       <Content>
         <nav>
           <img src={logo} alt="navers" />
-          <Link to="/">Sair</Link>
+          <button type="button" onClick={handleSignOut}>
+            Sair
+          </button>
         </nav>
       </Content>
     </Container>

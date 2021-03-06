@@ -30,6 +30,11 @@ export default function auth(state = INITIAL_STATE, action) {
         console.log(naverIndex);
         break;
       }
+      case '@auth/SIGN_OUT': {
+        draft.token = null;
+        draft.signed = false;
+        break;
+      }
       case '@auth/SIGN_UP_FAILURE': {
         draft.loading = false;
         break;
