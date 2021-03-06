@@ -20,7 +20,9 @@ export const Content = styled.div`
       padding-right: 20px;
     }
 
-    a {
+    button {
+      border: none;
+      background: transparent;
       font-weight: bold;
       color: #212121;
     }
